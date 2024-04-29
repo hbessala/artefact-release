@@ -1,9 +1,5 @@
 pipeline {
     agent any
-    environment {
-#        REPO_DIR = '/home/control/work'
-        BACKUP_SERVER = '46.101.209.213'
-    }
     stages {
         stage('Checkout') {
             steps {
@@ -21,7 +17,7 @@ pipeline {
             steps {
                 // Copy the result to the backup server
 		#scp backup.04-29-2024.tar.gz webapp@46.101.209.213:/home/webapp/backups
-                sh "scp backup.04-29-2024.tar.gz webapp@${BACKUP_SERVER}:/home/webapp/backups"
+                sh "scp backup.04-29-2024.tar.gz webapp@46.101.209.213:/home/webapp/backups"
             }
         }
     }
