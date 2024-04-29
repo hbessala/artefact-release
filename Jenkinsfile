@@ -16,7 +16,6 @@ pipeline {
         stage('Backup Result') {
             steps {
                 // Copy the result to the backup server
-		#scp backup.04-29-2024.tar.gz webapp@46.101.209.213:/home/webapp/backups
                 sh "scp backup.04-29-2024.tar.gz webapp@46.101.209.213:/home/webapp/backups"
             }
         }
