@@ -14,7 +14,7 @@ pipeline {
         stage('Execute Script') {
             steps {
                 // Execute the shell script present in the repository
-                sh "cd ${REPO_DIR} && ./backup.sh"
+                sh "./backup.sh"
             }
         }
         stage('Backup Result') {
